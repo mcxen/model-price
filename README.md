@@ -217,6 +217,37 @@ npm run build
 
 本项目采用 [MIT License](LICENSE) 开源。
 
+### 支持我们
+
+如果本项目对你有所帮助，可以通过以下方式支持我们的持续开发。
+
+<table style="margin: 0 auto">
+  <tbody>
+    <tr>
+      <td align="center" style="width: 260px">
+        <img
+          src="https://xiaobox-public-images.oss-cn-beijing.aliyuncs.com/imagescc16a59f8b43da4a3ad3ce201f46fc9d.jpg"
+          style="width: 200px"
+        /><br />
+      </td>
+      <td align="center" style="width: 260px">
+        <img
+          src="https://xiaobox-public-images.oss-cn-beijing.aliyuncs.com/images2d585d78e23826f6698ddd4edec5d9c2.jpg"
+          style="width: 200px"
+        /><br />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+如果这个项目对你有帮助，欢迎 Star ⭐️ 支持！也欢迎提交 Issue/PR 一起把它打磨得更好。
+
+### Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=xiaobox/model-price&type=Date)](https://www.star-history.com/#xiaobox/model-price&Date)
+
 ---
 
 ## English
