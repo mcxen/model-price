@@ -278,13 +278,3 @@ cd frontend && npm install && npm run dev
 ### License
 
 [MIT License](LICENSE)
-
----
-
-<div align="center">
-
-**Built with FastAPI + React**
-
-价格单位：$/百万 tokens
-
-</div>
