@@ -437,10 +437,8 @@
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  padding: 1.75rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: slideUp 0.5s ease forwards;
-  opacity: 0;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
   box-shadow: var(--shadow-sm);
 }
@@ -471,14 +469,18 @@
 .card-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 1rem;
+  gap: 0.5rem;
 }
 
 .card-badges {
   display: flex;
-  align-items: center;
-  gap: var(--space-sm);
+  align-items: flex-start;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 60%;
 }
 
 /* ========================================
@@ -674,6 +676,28 @@
   box-shadow: var(--shadow-lg);
   margin-top: 4px;
   animation: dropdownFadeIn 0.15s ease;
+}
+
+/* Portal-rendered dropdown - higher z-index to ensure visibility above all elements */
+.capability-dropdown-portal {
+  z-index: 10000;
+  margin-top: 0;
+}
+
+/* Dropdown that opens upward */
+.capability-dropdown-portal.open-upward {
+  animation: dropdownFadeInUp 0.15s ease;
+}
+
+@keyframes dropdownFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes dropdownFadeIn {
@@ -937,9 +961,43 @@
 
 .model-table {
   width: 100%;
-  min-width: 1200px;
   border-collapse: separate;
   border-spacing: 0;
+}
+
+/* 表格列宽定义 */
+.col-provider {
+  width: 90px;
+  min-width: 90px;
+}
+
+.col-model {
+  /* 模型名称列不设固定宽度，自动填充 */
+}
+
+.col-price {
+  width: 75px;
+  min-width: 75px;
+}
+
+.col-context {
+  width: 70px;
+  min-width: 70px;
+}
+
+.col-modality {
+  width: 50px;
+  min-width: 50px;
+}
+
+.col-opensource {
+  width: 55px;
+  min-width: 55px;
+}
+
+.col-capabilities {
+  /* 能力列不设宽度限制，自动适应内容 */
+  white-space: nowrap;
 }
 
 .model-table thead {
@@ -1060,6 +1118,7 @@
   color: var(--text-secondary);
   white-space: nowrap;
   letter-spacing: 0.01em;
+  padding-right: 1.5rem !important;
 }
 
 .model-name-cell {
@@ -1067,17 +1126,22 @@
   font-size: var(--font-size-base);
   color: var(--text-primary);
   white-space: nowrap;
-  max-width: 280px;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-left: 0.5rem !important;
 }
 
 .capabilities-cell {
-  padding-right: 20px !important;
+  white-space: nowrap;
+  min-width: 280px;
 }
 
-.capabilities-cell .capability-list {
-  justify-content: flex-start;
+.capabilities-cell .capability-list,
+.capabilities-cell .capability-list-wrapper .capability-list {
+  display: inline-flex !important;
+  flex-wrap: nowrap !important;
+  gap: 5px;
+  white-space: nowrap;
 }
 
 /* Empty State */
@@ -1283,4 +1347,25 @@
 
 .modality-cell {
   min-width: 60px;
+}
+
+/* Virtual Table Styles */
+.virtual-table-container {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.virtual-table-header {
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+}
+
+.virtual-table-row:hover {
+  background: rgba(232, 93, 4, 0.06) !important;
+}
+
+.virtual-table-row:hover > div:first-child {
+  box-shadow: inset 3px 0 0 var(--accent-primary);
 }
