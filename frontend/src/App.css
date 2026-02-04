@@ -416,6 +416,40 @@
   animation: pulse-slide 1.5s ease-in-out infinite;
 }
 
+/* Export Button */
+.export-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.export-btn:hover:not(:disabled) {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.export-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.export-icon {
+  font-size: 1rem;
+}
+
+.export-text {
+  font-weight: 500;
+}
+
 @keyframes pulse-slide {
   0% {
     transform: translateX(-100%);

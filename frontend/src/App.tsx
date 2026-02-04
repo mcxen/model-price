@@ -7,6 +7,7 @@ import {
   VirtualTable,
   RefreshButton,
   ViewToggle,
+  ExportButton,
 } from './components';
 import { APP_VERSION } from './config';
 
@@ -126,6 +127,7 @@ function App({ editable = false }: AppProps) {
               />
               <div className="controls-right">
                 <RefreshButton refreshing={refreshing} onRefresh={refresh} />
+                <ExportButton models={models} />
                 <ViewToggle view={view} onViewChange={setView} />
               </div>
             </div>
